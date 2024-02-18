@@ -2,23 +2,23 @@
 const kjopBillett=[];
 
 //Funksjon for å bestille
-function bestill(){
+function bestillBillett(){
     const velgFilm = document.getElementById("film").value;
-    const innAntall = document.getElementById("antall").value;
-    const innFornavn = document.getElementById("fornavn").value;
-    const innEtternavn = document.getElementById("etternavn").value;
-    const innTelefonnr = document.getElementById("telefonnr").value;
-    const innEpost = document.getElementById("epost").value;
+    const velgAntall = document.getElementById("antall").value;
+    const velgFornavn = document.getElementById("fornavn").value;
+    const velgEtternavn = document.getElementById("etternavn").value;
+    const velgTelefon = document.getElementById("telefonnr").value;
+    const velgEpost = document.getElementById("epost").value;
 
-    const bestiller = {
+    const personalia = {
         film : velgFilm,
-        antall : innAntall,
-        fornavn : innFornavn,
-        etternavn : innEtternavn,
-        telefonnr : innTelefonnr,
-        epost : innEpost
+        antall : velgAntall,
+        fornavn : velgFornavn,
+        etternavn : velgEtternavn,
+        telefonnr : velgTelefon,
+        epost : velgEpost
     };
-    kjopBillett.push(bestiller);
+    kjopBillett.push(personalia);
 
 
 
@@ -45,33 +45,35 @@ function bestill(){
     }
 //error meldinger dersom mangler
 
-if (velgFilm == "Velg film" || (innAntall == 0) || (innFornavn == "") || (innEtternavn == "") || (innTelefonnr < 8) || (innEpost == ""))
+if (velgFilm == "Velg film" || (velgAntall == 0) || (velgFornavn == "") || (velgEtternavn == "") || (velgTelefon < 8) || (velgEpost == ""))
 
     if(velgFilm == ""){
         document.getElementById("filmFeil").innerHTML = "Vennligst velg en film";
     }
-    if(innAntall == 0){
+    if(velgAntall == 0){
         document.getElementById("antallFeil").innerHTML = "Vennligst velg antall billetter";
     }
 
-    if(innFornavn == ""){
+    if(velgFornavn == ""){
         document.getElementById("fornavnFeil").innerHTML = "Vennligst oppgi et fornavn";
     }
 
-    if(innEtternavn == ""){
+    if(velgEtternavn == ""){
         document.getElementById("etternavnFeil").innerHTML = "Vennligst oppgi et etternavn";
     }
 
-    if(innTelefonnr < 8){
+    if(velgTelefon < 8){
         document.getElementById("telefonnrFeil").innerHTML = "Vennligst oppgi et telefonnummer";
     }
 
-    if(innEpost == ""){
+    if(velgEpost == ""){
         document.getElementById("epostFeil").innerHTML = "Vennligst oppgi en e-postadresse";
     }
-    if(velgFilm == "Velg en film", innAntall == 0, innFornavn == "", innEtternavn == "", innTelefonnr < 8, innEpost == ""){
+    if(velgFilm == "Velg en film", velgAntall == 0, velgFornavn == "", velgEtternavn == "", velgTelefon < 8, velgEpost == ""){
         kjopBillett.pop();
     }
+
+ //nuller ut inntastingsfelt
     else{
         document.getElementById("kjopBillett").innerHTML = ut;
 
